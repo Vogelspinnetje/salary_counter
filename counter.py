@@ -32,7 +32,7 @@ for event in c.events:
     duration = event.duration
     hours = duration.total_seconds() / 3600  
     month = event.begin.format("MMMM")
-    if event.description:
+    if event.description.isnumeric:
         break_length = int(event.description) / 60
         hours -= break_length
     
